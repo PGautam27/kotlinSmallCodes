@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
@@ -35,16 +36,15 @@ import kotlinx.coroutines.launch
 
 class m():ViewModel(){
     private val _id = MutableLiveData("hi")
-    private val id: LiveData<String> = _id
+    val id: LiveData<String> = _id
 
     private val _value = MutableLiveData("bye")
-    private val value: LiveData<String> = _value
+    val value: LiveData<String> = _value
 
     val Idlist: MutableList<String> = mutableListOf()
     val Valuelist: MutableList<String> = mutableListOf()
 
-    @OptIn(DelicateCoroutinesApi::class)
-    fun s() = GlobalScope.launch {
+    fun s() = viewModelScope.launch {
         change()
     }
 

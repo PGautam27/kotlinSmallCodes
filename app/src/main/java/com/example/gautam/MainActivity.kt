@@ -27,15 +27,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             GautamTheme {
-                swiftPlaces()
+
                 // A surface container using the 'background' color from the theme
-                /*Column(
+                Column(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    CountIndicatorCircle(score(20))
-                }*/
+                    CountIndicatorCircle(score(100))
+                }
             }
         }
     }
