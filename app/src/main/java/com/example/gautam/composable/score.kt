@@ -3,6 +3,7 @@ package com.example.gautam.composable
 import androidx.compose.ui.graphics.Color
 import com.example.gautam.ui.theme.*
 
+
 data class score(val value : Int){
     var status = getStatus(value)
     var color = getColor(value)
